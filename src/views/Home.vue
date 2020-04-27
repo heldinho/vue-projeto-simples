@@ -1,18 +1,25 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <app-contador />
+    <app-form />
+    <app-grid />
+    <app-modal />
+    <login />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+// import HelloWorld from '@/components/HelloWorld.vue'
+import Login from '@/views/Login'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Login
+  },
+  async mounted() {
+    await this.$nextTick()
+    console.log('Teste nextTick')
   }
 }
 </script>
